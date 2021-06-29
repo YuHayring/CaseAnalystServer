@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "cn.hayring.detecttool.graph.maxnodecount",
+      "name": "cn.hayring.caseanalyst.server.graph.maxnodecount",
       "type": "java.lang.Integer",
       "description": "The max count of simple graph."
   }

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.hayring</groupId>
-    <artifactId>detecttool</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>detecttool</name>
-    <description>Detect Tool</description>
+    <artifactId>caseanalyst</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>CaseAnalystServer</name>
+    <description>Case Analyst</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>

@@ -1,4 +1,4 @@
-target/
+/target
 
 ### STS ###
 .apt_generated
@@ -15,15 +15,16 @@ target/
 *.ipr
 
 ### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-out/
+/out/
 
 .gradle/
 
-jars/
+/jars/
+/target/
