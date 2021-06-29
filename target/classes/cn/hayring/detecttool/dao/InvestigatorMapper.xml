@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hayring.detecttool.dao.InvestigatorMapperDao">
+
+
+
+    <resultMap id="InvestigatorMap" type="Investigator">
+        <!--
+        一般通过id标签来映射主键
+        column = 数据库的列名
+        property = 结果集对应的数据库列名的映射名
+        -->
+        <id column="i_id" property="_id"/>
+        <result column="i_name" property="_name"/>
+        <result column="i_password" property="_password"/>
+        <result column="i_level" property="_level" />
+    </resultMap>
+
+
+    <select id="selectById" parameterType="String" resultType="Investigator" resultMap="InvestigatorMap">
+        SELECT  i_id, i_password FROM investigator WHERE i_id = #{id};
+    </select>
+
+    <select id="selectByIdNormal" parameterType="String" resultType="Investigator" resultMap="InvestigatorMap">
+        SELECT  i_id, i_name, i_level FROM investigator WHERE i_id = #{id};
+    </select>
+
+
+
+</mapper>

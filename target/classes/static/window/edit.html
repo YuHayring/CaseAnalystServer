@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="styleSheet"  href="../layui/css/layui.css" />
+    <link type="text/css" rel="styleSheet"  href="../css/edit.css" />
+    <script src="../layui/layui.js"></script>
+    <script src="./edit.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script type="text/javascript">
+        // window.onload = loadNodesFirstByPage;
+    </script>
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend id="type">请先选择一个节点</legend>
+</fieldset>
+
+
+<div id="fields">
+
+</div>
+<button class="layui-btn layui-btn-normal" onclick="save()" id="save" >保存</button><br/>
+<button class="layui-btn layui-btn-primary layui-border-blue" onclick="createNode()">新增结点</button>
+<button class="layui-btn layui-btn-danger" onclick="deleteNode()">删除结点</button>
+
+</body>
+</html>

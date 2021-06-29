@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>侦查辅助系统——登录</title>
+    <script src="./layui/layui.js"></script>
+    <script src="login.js"></script>
+    <script src="./js/ajax.js"></script>
+    <link type="text/css" rel="styleSheet"  href="./layui/css/layui.css" />
+</head>
+<body>
+<div class="layui-col-md-offset3"><img src="logo.png"></div>
+
+<div class="layui-col-md4 layui-col-md-offset4">
+<div class="layui-form-item">
+    <label class="layui-form-label">侦查员账户</label>
+    <div class="layui-input-block">
+        <input id="investigatorId" type="text" name="username" lay-verify="title" autocomplete="off" placeholder="id" class="layui-input">
+    </div>
+</div>
+<div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+        <input id="password" type="password" name="password" placeholder="password" autocomplete="off" class="layui-input">
+    </div>
+</div>
+    <div onclick="login()" lass="layui-col-md-offset4" ><button type="button" class="layui-btn layui-btn-normal layui-col-md-offset4">登录</button></div>
+
+</div>
+<div class="layui-col-md4"></div>
+</body>
+</html>

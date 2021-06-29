@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>侦查辅助系统</title>
+    <script src="./layui/layui.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="login.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link type="text/css" rel="styleSheet"  href="./layui/css/layui.css" />
+    <script type="text/javascript" src="graphs.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/queue.js"></script>
+    <script type="text/javascript" src="/js/cytoscape.min.js"></script>
+    <script type="text/javascript">
+        window.onload = loadUserName;
+    </script>
+    <style type="text/css">
+        /* cytoscape graph */
+        #cy {
+            height: 768px;
+            width: 1366px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">侦查辅助系统</div>
+
+        <ul class="layui-nav layui-layout-left">
+
+            <li class="layui-nav-item layui-hide-xs" id="case_name_label">请选择一个案件</li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img"/>
+                    <label id="user_name_label">侦查员</label>
+                </a>
+            </li>
+            <li class="layui-nav-item"><a href="javascript:logout()">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test" id="leftNavigator">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:listItem();">案件检索</a>
+<!--                    <dl class="layui-nav-child">-->
+<!--                        <dd><a href="javascript:;">列表一</a></dd>-->
+<!--                        <dd><a href="javascript:;">列表二</a></dd>-->
+<!--                        <dd><a href="javascript:;">列表三</a></dd>-->
+<!--                        <dd><a href="">超链接</a></dd>-->
+<!--                    </dl>-->
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">窗口</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:openNodeSelector();">结点选择器</a></dd>
+                        <dd><a href="javascript:openNodeEditor();">结点编辑器</a></dd>
+                        <dd><a href="javascript:openEdgeEditor();">关系编辑器</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">操作</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:loadNeighbours();">显示邻接结点</a></dd>
+                        <dd><a href="javascript:showNeighboursByType();">显示指定类型的邻接结点</a></dd>
+                        <dd><a href="javascript:clearAll();">隐藏所有结点</a></dd>
+                    </dl>
+                </li>
+<!--                <li class="layui-nav-item"><a href="">云市场</a></li>-->
+<!--                <li class="layui-nav-item"><a href="javascript:getGraphFromNet()">图数据库测试</a></li>-->
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body" id="mainBody">
+        <div id="caseList">
+            <table class="layui-table" id="cases">
+
+            </table>
+            <div id="pager"></div>
+            <button class="layui-btn layui-btn-warm" onclick="createCase()">创建新的案件</button>
+        </div>
+    </div>
+
+<!--    <div class="layui-footer">-->
+<!--        &lt;!&ndash; 底部固定区域 &ndash;&gt;-->
+<!--        © layui.com - 底部固定区域-->
+<!--    </div>-->
+</div>
+
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+</html>

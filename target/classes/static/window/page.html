@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link type="text/css" rel="styleSheet"  href="../layui/css/layui.css" />
+    <script src="../layui/layui.js"></script>
+    <script src="./page.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script type="text/javascript">
+        window.onload = loadNodesFirstByPage;
+    </script>
+</head>
+<body>
+<ul id="node_list"></ul>
+<div id="pager"></div>
+<label class="layui-form-label">结点类型</label>
+<div class="layui-input-block">
+    人物<input type="radio" name="label" value="person" title="人物" onclick="labelChanged(this)" checked>
+    物品<input type="radio" name="label" value="thing" title="物品" onclick="labelChanged(this)">
+    事件<input type="radio" name="label" value="event" title="事件" onclick="labelChanged(this)">
+    地点<input type="radio" name="label" value="place" title="地点" onclick="labelChanged(this)">
+</div>
+<!--<button class="layui-btn-normal" onclick="test()" >test</button>-->
+</body>
+</html>

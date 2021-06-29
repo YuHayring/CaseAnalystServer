@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="styleSheet"  href="../layui/css/layui.css" />
+    <script src="../layui/layui.js"></script>
+    <script src="./edge.js"></script>
+    <script src="../js/ajax.js"></script>
+    <link type="text/css" rel="styleSheet"  href="../css/edit.css" />
+</head>
+<body>
+<div style="display: flex">
+    <div class="layui-col-md1 layui-form-label mylabel">
+        <button class="layui-btn layui-btn-primary" onclick="select(false)" id="startButton">start结点</button>
+    </div>
+    <div class="layui-col-md1" id="fields">
+        <label class="layui-form-label mylabel">&emsp;请选择结点</label>
+    </div>
+    <div class="layui-col-md1 layui-form-label mylabel">
+        <button class="layui-btn layui-btn-primary" onclick="select(true)"  id="endButton">end 结点</button>
+    </div>
+</div>
+<button class="layui-btn layui-btn-primary layui-border-blue" onclick="create()">建立关系</button>
+<button class="layui-btn layui-btn-normal" onclick="save()">保存关系</button>
+<button class="layui-btn layui-btn-danger" onclick="del()">删除关系</button>
+</body>
+</html>

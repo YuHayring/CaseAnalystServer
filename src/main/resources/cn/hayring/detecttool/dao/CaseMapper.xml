@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hayring.detecttool.dao.CaseMapperDao">
+
+
+
+    <resultMap id="CaseMap" type="Case">
+        <!--
+        一般通过id标签来映射主键
+        column = 数据库的列名
+        property = 结果集对应的数据库列名的映射名
+        -->
+        <id column="c_id" property="id"/>
+        <result column="c_name" property="name"/>
+        <result column="c_date" property="date" />
+    </resultMap>
+
+
+
+    <select id="selectById" parameterType="Long" resultType="Case" resultMap="CaseMap">
+        SELECT * FROM case WHERE c_id = #{id};
+    </select>
+
+    <select id="selectCases" resultType="Case" resultMap="CaseMap">
+        SELECT * FROM `case` ORDER BY c_date DESC
+    </select>
+
+    <select id="selectCases_COUNT" resultType="Integer">
+        SELECT count(*) FROM `case`
+    </select>
+
+    <insert id="insertCase" parameterType="Case">
+        INSERT INTO `case`(c_id, c_name, c_date)
+        VALUES(
+        #{id},
+        #{name},
+        #{date}
+        )
+    </insert>
+
+    <select id="countCaseName" parameterType="String" resultType="Integer">
+        SELECT count(*) FROM `case` where `case`.c_name = #{name}
+    </select>
+
+
+
+
+
+</mapper>

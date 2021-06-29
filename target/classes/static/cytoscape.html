@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Cytoscape.js</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <style type="text/css">
+        /* cytoscape graph */
+        #cy {
+            height: 768px;
+            width: 1366px;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/cytoscape/2.3.16/cytoscape.min.js"></script>
+    <script charset="utf-8">
+        $(function(){
+            cytoscape({
+                container: document.getElementById('cy'),
+                style: [
+                    { selector: 'node[label = "Person"]',
+                        css: {'background-color': '#6FB1FC', 'content': 'edge(name)'}
+                    },
+                    { selector: 'node[label = "Thing"]',
+                        css: {'background-color': '#F5A45D', 'content': 'edge(title)'}
+                    },
+                    { selector: 'edge',
+                        css: {'content': 'edge(relationship)', 'target-arrow-shape': 'triangle'}
+                    }
+                ],
+                elements: {
+                    nodes: [
+                        {edge: {id: '172', name: '琴酒', label: 'Person'}},
+                        {edge: {id: '183', title: '保时捷 356A', label: 'Car'}}
+                    ],
+                    edges: [{edge: {source: '172', target: '183', relationship: '拥有'}}]
+                },
+                layout: { name: 'grid'}
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="cy"></div>
+</body>
+</html>
